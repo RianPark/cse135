@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>php test page</title>
 	</head>
 	<body>
-		<h1>
+		<p>
 			<?php
 				echo "For test php!";
 			?>
-			</h1>
+		</p>
 	</body>
-		
 </html>
