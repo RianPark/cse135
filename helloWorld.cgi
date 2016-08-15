@@ -15,8 +15,9 @@ else{
 $color = blue;
 }
 
-print "<html><head><title>Hello World!</title>";
+print "<html><head><title>Hello World</title>";
 print "</head><body bgcolor=$color>\n";
-print "<p>Hello from CGI, the current time date is $time\n</p>";
+print "<p>Hello World : CGI </p>";
+print "<p>Date, Time : $time\n</p>";
 print"</body>\n</html>";
 
