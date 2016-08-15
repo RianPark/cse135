@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 var num = 0;
 
-function randomInt( 0, 2 ){
+function randomInt ( 0, 2 ) {
 	num = Math.floor(Math.random() * ( 2-0 ) + 0 );
 }
 
