@@ -13,8 +13,3 @@ http.createServer(function (request, response) {
 
 // Console will print the message
 console.log('Hello World running at http://138.68.30.229:8000/');
-
-setTimeout(function() {
-	util.puts('Throwing error now.');
-	throw new Error('User generate fault.');
-}, 5000);
