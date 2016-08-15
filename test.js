@@ -9,7 +9,7 @@ function randomInt ( low, high ) {
 	num = Math.floor(Math.random() * ( high -low ) + low );
 }
 
-app.get( function (request, response) {
+app.get('/', function (request, response) {
 
    // Send the HTTP header 
    // HTTP Status: 200 : OK
@@ -19,17 +19,16 @@ app.get( function (request, response) {
 
    	if( num == 1)
 	{
-   		res.sendFile(path.join(__dirname + 'blueJS.html'));
+   		res.sendFile(path.join(__dirname + '/blueJS.html'));
 	}
 	else if(num == 2)
 	{
-   		res.sendFile(path.join(__dirname + 'whiteJS.html'));
+   		res.sendFile(path.join(__dirname + '/whiteJS.html'));
 	}
 	else
 	{
-   		res.sendFile(path.join(__dirname + 'redJS.html'));
+   		res.sendFile(path.join(__dirname + '/redJS.html'));
 	}
-
 });
 app.listen(8000);
 
