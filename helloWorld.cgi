@@ -1,22 +1,19 @@
-#!/usr/bin/perl
-
 print "Content-type: text/html\n\n";
 
 $time = localtime;
 $colorChoice = int(rand(3));
 
-
 if($colorChoice == 0){
 	$color = red;
 }
 elsif($colorChoice == 1){
-	$color = blue;
+	$color = white;
 }
 else{
-$color = white;
+$color = blue;
 }
 
 print "<html><head><title>Hello World!</title>";
 print "</head><body bgcolor=$color>\n";
-print "<h1>Hello from CGI, the current time date is $time\n</h1>";
+print "<p>Hello from CGI, the current time date is $time\n</p>";
 print"</body>\n</html>";
