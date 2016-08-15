@@ -12,20 +12,8 @@ eateServer(function (request, response) {
    // Content Type: text/plain
    response.writeHead(200, {'Content-Type': 'text/plain'});
 
-   if( num == 0 )
-   {
-		var bgred = require('ansi-bgred');
-   }
-   else if( num == 1 )
-   {
-		var bgwhite = require('ansi-bgwhite');
-   }   
-   else
-   {
 		var bgblue = require('ansi-bgblue');
-   }
-
-   response.background()
+ 
    // Send the response body as "Hello World"
    response.end('Hello World JS\n');
 }).listen(8000);
