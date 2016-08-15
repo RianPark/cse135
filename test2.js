@@ -25,6 +25,5 @@ app.get('/', function( req, res) {
 	else{
 		fs.readFile('whiteJS.html', function(error, data))
 	}
-	res.end(data)
-	});
-});
+	res.end(data);
+};
