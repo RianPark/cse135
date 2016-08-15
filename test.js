@@ -30,7 +30,7 @@ app.get( function (request, response) {
    		res.sendFile(path.join(__dirname + 'redJS.html'));
 	}
 
-})
+});
 app.listen(8000);
 
 // Console will print the message
