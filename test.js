@@ -1,21 +1,20 @@
 var http = require("http");
-var num = 0;
 var color;
 
 function random (0, 2) {
     num =  Math.random() * 2 ;
 }
-eateServer(function (request, response) {
+
+http.createServer(function (request, response) {
 
    // Send the HTTP header 
    // HTTP Status: 200 : OK
    // Content Type: text/plain
    response.writeHead(200, {'Content-Type': 'text/plain'});
 
-	var bgblue = require('ansi-bgblue');
- 	
-   response.end(bgblue);
-   // Send the response body as "Hello World"
+   var bgblue = require('ansi-bgblue');
+ 
+   console.log(colors.bgblue());
    response.end('Hello World JS\n');
 }).listen(8000);
 
