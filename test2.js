@@ -11,20 +11,17 @@ function randomInt ( low, high ) {
 }
 
 app.listen(3303, function() {
-	console.log("start");
+	console.log("start server");
 })
 
 app.get('/', function( req, res) {
 
-	if( num == 1){
-		fs.readFile('redJS.html', function(error, data)
-		res.writeHead(200, {'Content-Type': 'text/html'}))
-	}
-	else if( num == 2 ){
-		fs.readFile('blueJS.html', function(error, data))
-	}
-	else{
-		fs.readFile('whiteJS.html', function(error, data))
-	}
-	res.end(data);
-};
+	fs.readFile('blueJS.html', function(error, data) {
+		if(error){
+			console.log(error);
+		} else {
+			res.writeHead(200,{'Content-Type': 'text/html'});
+			res.end(data);
+		}
+	});
+});
