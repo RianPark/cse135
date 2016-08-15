@@ -2,9 +2,11 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var num = 0;
+var low = 1;
+var high = 3;
 
-function randomInt ( 1, 3 ) {
-	num = Math.floor(Math.random() * ( 3-1 ) + 1 );
+function randomInt ( low, high ) {
+	num = Math.floor(Math.random() * ( high -low ) + low );
 }
 
 app.get( function (request, response) {
