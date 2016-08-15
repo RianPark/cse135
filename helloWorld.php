@@ -19,7 +19,7 @@
 		$color = blue;
 	}
 echo "</head><body bgcolor =$color><h1>";
-echo "Hello World : PHP the time date is ";
+echo "Hello World : PHP \r\n";
 echo "Date, time : ".date("Y-m-d h:i:sa");
 echo"</body></html>";
 ?>
