@@ -3,8 +3,8 @@ var app = express();
 var path = require('path');
 var num = 0;
 
-function randomInt ( 0, 2 ) {
-	num = Math.floor(Math.random() * ( 2-0 ) + 0 );
+function randomInt ( 1, 3 ) {
+	num = Math.floor(Math.random() * ( 3-1 ) + 1 );
 }
 
 app.get( function (request, response) {
@@ -15,11 +15,11 @@ app.get( function (request, response) {
    //response.writeHead(200, {'Content-Type': 'text/plain'});
    //var bgblue = require('ansi-bgblue');
 
-   	if( num == 0)
+   	if( num == 1)
 	{
    		res.sendFile(path.join(__dirname + 'blueJS.html'));
 	}
-	else if(num == 1)
+	else if(num == 2)
 	{
    		res.sendFile(path.join(__dirname + 'whiteJS.html'));
 	}
