@@ -19,7 +19,7 @@
 		$color = blue;
 	}
 echo "</head><body bgcolor =$color><h1>";
-echo 'Hello World : PHP \n';
+echo "Hello World : PHP" .PHP_EOL;
 echo "Date, time : ".date("Y-m-d h:i:sa") .PHP_EOL;
 echo"</body></html>";
 ?>
