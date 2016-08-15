@@ -12,4 +12,4 @@ http.createServer(function (request, response) {
 }).listen(8081);
 
 // Console will print the message
-console.log('Server running at http://138.68.30.229/:8081/');
+console.log('Server running at http://138.68.30.229:8081/');
