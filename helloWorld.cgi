@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 print "Content-type: text/html\n\n";
 
 $time = localtime;
@@ -17,3 +19,4 @@ print "<html><head><title>Hello World!</title>";
 print "</head><body bgcolor=$color>\n";
 print "<p>Hello from CGI, the current time date is $time\n</p>";
 print"</body>\n</html>";
+
