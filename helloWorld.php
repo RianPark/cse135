@@ -18,8 +18,8 @@
 	{
 		$color = blue;
 	}
-echo "</head><body bgcolor =$color><h1>";
-echo "Hello World : PHP" .PHP_EOL;
-echo "Date, time : ".date("Y-m-d h:i:sa") .PHP_EOL;
-echo"</body></html>";
+echo "</head><body bgcolor =$color>";
+echo "<p>Hello World : PHP</p>";
+echo "<p>Date, time : ".date("Y-m-d h:i:sa");
+echo"</p></body></html>";
 ?>
