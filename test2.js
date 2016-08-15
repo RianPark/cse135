@@ -17,13 +17,13 @@ app.listen(3303, function() {
 app.get('/', function( req, res) {
 
 	if( num == 1){
-		fs.readFile('redJS.html', function(error, data)
+		fs.readFile('redJS.html', function(error, data))
 	}
 	else if( num == 2 ){
-		fs.readFile('blueJS.html', function(error, data)
+		fs.readFile('blueJS.html', function(error, data))
 	}
 	else{
-		fs.readFile('whiteJS.html', function(error, data)
+		fs.readFile('whiteJS.html', function(error, data))
 	}
 	res.end(data)
 	});
