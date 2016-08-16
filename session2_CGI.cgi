@@ -8,7 +8,7 @@ my $name= param("username");
 my $cookie = cookie(-name=>'mycookie', -value=>$name );
 my $state = 'aa';
 
-if( $name eq ''){
+if( $name == ''){
 		$state = 'Howdy stranger, return to page 1 to input a username!';
 }
 else{
