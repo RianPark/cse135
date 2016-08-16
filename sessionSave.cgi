@@ -12,7 +12,8 @@ print start_html("Cookie");
 print <<EndOfHTML;
 <h2></h2>
 Your name is $cid.<p>
+redirect("session1_CGI.html");
+
 EndOfHTML
 
 print end_html;
-redirect("session1_CGI.html");
