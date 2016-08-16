@@ -2,6 +2,7 @@
 
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use CGI::Session;
 use strict;
 
 my $session = new CGI::Session();
