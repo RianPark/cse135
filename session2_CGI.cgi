@@ -6,12 +6,13 @@ use strict;
 
 my $name= param("username");
 my $cookie = cookie(-name=>'mycookie', -value=>$name );
+my $state = 'aa';
 
 if( $name eq ''){
-		my $state = 'Howdy stranger, return to page 1 to input a username!';
+		$state = 'Howdy stranger, return to page 1 to input a username!';
 }
 else{
-		my $state = 'Hi $name, nice to meet you';
+		$state = 'Hi $name, nice to meet you';
 }
 
 print header(-cookie=>$cookie);
