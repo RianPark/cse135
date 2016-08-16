@@ -1,17 +1,16 @@
-var express = require('express');
-var app = express();
-var fs = require('fs');
+var http = require("http");
 
-app.listen(8000, function() {
-	console.log("start server");
-})
+http.createServer(function (request, response) {
 
-app.get('/', function( req, res) {
-
-	fs.readFile('blueJS.html', function(error, data) {
-		
-			res.writeHead(200,{'Content-Type': 'text/html'});
-			res.end(data);
-		
+	fs.readFile('/blueJS.html', (err, data) => {
+		if( err ) throw err;
+		console.log(data);
 	});
-});
+
+   response.writeHead(200, {'Content-Type': 'text/plain'});
+   
+   response.end('Hello World\n');
+}).listen(8000);
+
+// Console will print the message
+console.log('Server running ');
