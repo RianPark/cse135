@@ -20,6 +20,7 @@ print <<EndOfHTML;
 
 <h2></h2>
  $state <p>
+ $name <p>
 
 <button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
 <button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
