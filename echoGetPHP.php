@@ -1,15 +1,13 @@
 <?php
-	header('Content-Type: text/html');
-	echo "<html><head><title>Form Echo</title>";
-	
-	$color=$_GET["color"];
-	echo "</head><body bgcolor=$color><h1>";
-	
-	$firstname=$_GET["firstname"];
-	$lastname=$_GET["lastname"];
-	
-	echo "<p>Hello $firstname $lastname from a Web app written in PHP on </p>"
-	echo "<p>date time :".date("Y-m-d h:i:sa");
-	
-	echo "</p></h1></body></html>";
+header('Content-Type: text/html');
+echo "<html><head><title>Form Echo</title>";
+$color=$_GET["cSelect"];
+echo "</head><body bgcolor=$color><h1>";
+$first=$_GET["firstname"];
+$last=$_GET["lastname"];
+$dtime= date("Y-m-d", time());
+$theTime= time();
+echo "Welcome $first $last from a Web app written in PHP on ".date("Y-m-d h:i:sa");
+echo "</h1>";
+echo"</body></html>";
 ?>
