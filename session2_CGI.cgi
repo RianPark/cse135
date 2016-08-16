@@ -6,6 +6,9 @@ use strict;
 
 my $name= param("username");
 
+print header(-cookie=>$cookie);
+print start_html("Cookie");
+
 if( $name eq ''){
 		print "<p>Howdy stranger, return to page 1 to input a username!</p>";
 }
