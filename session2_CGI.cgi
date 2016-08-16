@@ -5,9 +5,7 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
 my $name= param("username");
-my $cookie = cookie(-name=>'mycookie', -value=>$username );
-print header(-cookie=>$cookie);
-print start_html("Cookie");
+my $cookie = cookie(-name=>'mycookie', -value=>$name );
 
 if( $name eq ''){
 		my $state = 'Howdy stranger, return to page 1 to input a username!';
@@ -16,13 +14,14 @@ else{
 		my $state = 'Hi $name, nice to meet you';
 }
 
-	print <<EndOfHTML;
-	<h2></h2>
-	<p> $state </p>
+print header(-cookie=>$cookie);
+print start_html("Cookie");
+print <<EndOfHTML;
 
-	<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
-	<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
+<h2></h2>
+ $state <p>
 
-	EndOfHTML
-
-	print end_html;
+<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
+<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
+EndOfHTML
+print end_html;
