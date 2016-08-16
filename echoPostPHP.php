@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html');
 echo "<html><head><title>Form Echo</title>";
-$color=$_POST["cSelect"];
+$color=$_POST["color"];
 echo "</head><body bgcolor=$color><h1>";
 $first=$_POST["firstname"];
 $last=$_POST["lastname"];
