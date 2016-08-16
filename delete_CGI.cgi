@@ -1,12 +1,19 @@
 #!/usr/bin/perl -wT
-use CGI qw(:cgi-lib :standard);
-use CGI::Cookie;
 
-%do_you_haz_cookie = CGI::Cookie->fetch;
-$da_cookie = $do_you_haz_cookie{'DA_BEST_COOKIE_EVA'};
-if ($da_cookie) { 
-	$da_cookie->expires('-1d');
-	$da_cookie->value(' ');
-}
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use CGI::Session;
+use strict;
 
-print redirect(-url=>'session2_CGI.cgi', -cookie=>$da_cookie);
+my $session = new CGI::Session->new();
+
+$session->clear();
+
+print header;
+
+print start_html("Destroy Session-CGI");
+print "<body>";
+print "<h1>Session is destroyed!</h1>";
+print "<a href="session1_CGI.html">Return to page 1</a>";
+print "</body>";
+print end_html;

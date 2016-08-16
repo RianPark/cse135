@@ -1,15 +1,30 @@
 #!/usr/bin/perl -wT
+
 use CGI qw(:cgi-lib :standard);
-use CGI::Cookie;
 
+print "Content-type: text/html\n\n";
 
-&ReadParse(%in); 
+&ReadParse(%in);
 
-$users_name = $in{"username"};
+$q = CGI->new();
 
+$session = CGI::Session->new($q);
 
-#Create and send cookie
-$cookie_name = 'DA_BEST_COOKIE_EVA';
-$da_cookie = CGI::Cookie->new(-users_name=>$cookie_name, -value=>$users_name, -expires => '3h', -httponly => 1);
+$name = param("username");
+$id = $session -> id;
+$cookie = $q ->cookie("CGISESSID", $id);
+$session ->param('username', $name);
+$user = $session -> param("username");
 
-print redirect(-url=>'session1_CGI.html', -cookie=>$da_cookie);
+print << "EOF";
+<html>
+	<head>
+		<title>Session Save CGI<title>
+	</head>
+	<body>
+		<h1>Username $user was saved in a session</h1>
+		<a href='session1_CGI.html'>Link Back to Page 1</a><br>
+		<a href='sessionpage2.cgi'>Link to Page 2</a>
+	</body>
+</html>
+EOF
