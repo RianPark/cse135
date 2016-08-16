@@ -3,9 +3,6 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-print header;
-print start_html("Get/Post CGI");
-
 my %form;
 my $first = param('firstname');
 my $last = param('lastname');
