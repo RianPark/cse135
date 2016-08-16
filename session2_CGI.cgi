@@ -7,7 +7,8 @@ $cookie_var = $cookie_check{'ID_cookie'};
 
 if ($cookie_var) 
 { 
-	$state = "Hi $cookie_var->value nice to meet you";
+	$name = $cookie_var->value;
+	$state = "Hi $name nice to meet you";
 }
 else {
 	$state = "Howdy stranger, tell me your name on session 1!";
