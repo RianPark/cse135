@@ -28,7 +28,7 @@
   <body>
     <h1>Form collect CGI</h1>
 
-    <form action="echoGetCgi.cgi" id="the_info">
+    <form action="echoGetCgi.cgi" method="get" id="the_info">
       
       First Name:
       <input type="text" name="firstname"><br>
@@ -45,13 +45,15 @@
 
       <p>Request Method:
         <select id="method_select" onchange="get_info();">
-          <option value="get">GET</option>
-          <option value="post">POST</option>
+          <option value="get">Get</option>
+          <option value="post">Post</option>
         </select>
       </p>
 
       <input type="submit">
 
     </form>
+
+
     </body>
 </html>

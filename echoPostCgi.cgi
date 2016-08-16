@@ -20,7 +20,7 @@ print << "EOF";
 		<title>Form Results</title>
 	</head>
 	<body>
-		<h2>Hello $first $last, Web app CGI with get, on $time\n</h2>
+		<h2>Hello $first $last, Web app CGI with post, on $time\n</h2>
 	</body>
 </html>
 EOF
