@@ -4,9 +4,8 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-&ReadParse(%in);
-my $cid = $in("username");
-my $cookie = cookie(-name=>'mycookie', -value=>$cid, -domain=>'.cgi101.com');
+my $cid = 'username';
+my $cookie = cookie(-name=>'mycookie', -value=>$cid );
 print header(-cookie=>$cookie);
 print start_html("Cookie");
 
