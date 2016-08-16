@@ -4,7 +4,6 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-my $cookie = cookie(-name=>'mycookie', -value=>$cid );
 print header(-cookie=>$cookie);
 print start_html("Cookie");
 
