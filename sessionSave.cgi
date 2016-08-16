@@ -1,14 +1,15 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -wT
 use strict;
-use warnings;
-use CGI;
 
-my $cgi = CGI->new;
-my $cookie = $cgi->cookie(
-    -name  => 'name',
-    -value => 'name'
-);
+my $cid = username;
+print "Set-Cookie: NAME=$cid\n";
+print "Content-type: text/html\n\n";    
 
-print $cgi->header( -cookie => $cookie );
-my $cookie_data = $cgi->cookie('name') || 'Howdy stranger, return to page 1 to input a username!';
-print "<h2>Cookie Data: $cookie_data</h2>\n";
+print <<EndOfHTML;
+<html><head><title>Welcome</title></head>
+<body>
+<h2>Welcome!</h2>
+Your cookie is $cid.<p>
+</body></html>
+EndOfHTML
+;
