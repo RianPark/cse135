@@ -6,6 +6,6 @@
 	
 	echo "<html><head><title>Form Echo</title>";
 	echo "</head><body bgcolor=$color><h1>";
-	echo "Hello $first $last, Web app with PHP, post method on ".date("Y-m-d h:i:sa");
+	echo "Hello $first $last, Web app with PHP, post method, on ".date("Y-m-d h:i:sa");
 	echo "</h1></body></html>";
 ?>
