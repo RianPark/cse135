@@ -5,21 +5,22 @@ use CGI qw(:cgi-lib :standard);
 print "Content-type: text/html\n\n";
 
 &ReadParse(%in);
-$time = localtime();
 $first = $in{"firstname"};
 $last = $in{"lastname"};
 $color = $in{"color_select"};
 
+$time = localtime();
+
 print << "EOF";
-<HTML>
-<HEAD>
-<STYLE>
-body {background-color: $color;}
-</STYLE>
-<TITLE>Form Results</TITLE>
-</HEAD>
-<BODY>
-<H2>Hello $first $last, Web app with CGI, get method on $time\n</H2>
-</BODY>
-</HTML>
+<html>
+	<head>
+		<style>
+			body {background-color: $color;}
+		</style>
+		<title>Form Results</title>
+	</head>
+	<body>
+		<h2>Hello $first $last, Web app with CGI, get method on $time\n</h2>
+	</body>
+</html>
 EOF
