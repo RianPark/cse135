@@ -1,30 +1,14 @@
-#!/usr/bin/perl -wT
+#!/usr/bin/perl
+use strict;
+use warnings;
+use CGI;
 
-use CGI qw(:cgi-lib :standard);
+my $cgi = CGI->new;
+my $cookie = $cgi->cookie(
+    -name  => 'User_cookie',
+    -value => 'username'
+);
 
-print "Content-type: text/html\n\n";
-
-&ReadParse(%in);
-
-$q = CGI->new();
-
-$session = CGI::Session->new($q);
-
-$name = param("username");
-$id = $session -> id;
-$cookie = $q ->cookie("CGISESSID", $id);
-$session ->param('username', $name);
-$user = $session -> param("username");
-
-print << "EOF";
-<html>
-	<head>
-		<title>Session Save CGI<title>
-	</head>
-	<body>
-		<h1>Username $user was saved in a session</h1>
-		<a href='session1_CGI.html'>Link Back to Page 1</a><br>
-		<a href='sessionpage2.cgi'>Link to Page 2</a>
-	</body>
-</html>
-EOF
+print $cgi->header( -cookie => $cookie );
+my $cookie_data = $cgi->cookie('User_cookie') || 'No Cookie Set';
+print "<h2>Cookie Data: $cookie_data</h2>\n";
