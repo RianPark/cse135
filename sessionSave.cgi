@@ -1,18 +1,16 @@
 #!/usr/bin/perl -wT
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-&ReadParse(%in);
-
-my $cid = $in{username};
-
-print "Set-Cookie: NAME=$cid\n";
-print "Content-type: text/html\n\n";    
+my $cid = int(rand(1000000));
+my $cookie = cookie(-name=>'mycookie', -value=>$cid, -domain=>'.cgi101.com');
+print header(-cookie=>$cookie);
+print start_html("Cookie");
 
 print <<EndOfHTML;
-<html><head><title>Welcome</title></head>
-<body>
 <h2>Welcome!</h2>
 Your cookie is $cid.<p>
-</body></html>
 EndOfHTML
-;
+
+print end_html;
