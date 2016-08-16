@@ -4,31 +4,31 @@
     <title>PHP</title>
   </head>
 
-  <body>
-    <h1>Form collect PHP</h1>
-
-    <script type="text/javascript">
+  <script type="text/javascript">
   
-    function sendGetPost()
+    function get_info()
     {
       var selector = document.getElementById("method_select").value;
-      var form = document.getElementById("theform");
+      var info = document.getElementById("the_info");
     
       if(selector == "post")
       {
-        form.action="echoPostPHP.php";
-        form.method="post";
+        info.action="echoPostPHP.php";
+        info.method="post";
       }
       else
       {
-        form.action="echoGetPHP.php";
-        form.method="get";
+        info.action="echoGetPHP.php";
+        info.method="get";
       }
     }
     
-    </script>
+  </script>
 
-    <form action="echoGetPHP.php" id="theform">
+  <body>
+    <h1>Form collect PHP</h1>
+
+    <form action="echoGetPHP.php" id="the_info">
       
       First Name:
       <input type="text" name="firstname"><br>
@@ -44,7 +44,7 @@
       </p>
 
       <p>Request Method:
-        <select id="method_select" name="Select" onchange="sendGetPost();">
+        <select id="method_select" onchange="get_info();">
           <option value="get">GET</option>
           <option value="post">POST</option>
         </select>
@@ -53,6 +53,5 @@
       <input type="submit">
     
     </form>
-  
-  </body>
+    </body>
 </html>

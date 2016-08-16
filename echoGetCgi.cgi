@@ -7,13 +7,12 @@ print header;
 print start_html("Get/Post CGI");
 
 my %form;
-my $fn = param('firstname');
-my $ln = param('lastname');
-my $color = param('cSelect');
-my $method= param('mSelect');
+my $first = param('firstname');
+my $last = param('lastname');
+my $color = param('color_select');
 my $time = localtime;
 
-print "<body bgcolor=$color>";
-print "<h1>Hello $fn $ln, from a Web app written in CGI on $time using $method</h1>";
+print "<body bgcolor = $color>";
+print "<h1>Hello $first $last, Web app with CGI, get method on $time</h1>";
 print "</body>";
 print end_html;
