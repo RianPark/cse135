@@ -4,7 +4,7 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-my $name = param("username");
+my $name = $cid;
 my $state = 'aa';
 
 if( $name == ''){
