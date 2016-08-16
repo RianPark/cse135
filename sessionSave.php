@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$session["name"] = $_GET["username"];
-	$name = $session["name"];
+	$_SESSION["name"] = $_GET["username"];
+	$name = $_SESSION["name"];
 	header( 'Location: session1_PHP.html' )
 ?>
