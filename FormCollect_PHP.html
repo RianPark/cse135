@@ -16,11 +16,11 @@
     var selector = document.getElementById("methodSelect").value;
     var form = document.getElementById("theform");
     if(selector == "post"){
-      form.action="hw2_files/echoPost.php";
+      form.action="echoPostPHP.php";
       form.method="post";
     }
     else{
-      form.action="hw2_files/echoGet.php";
+      form.action="echoGetPHP.php";
       form.method="get";
     }
   }
