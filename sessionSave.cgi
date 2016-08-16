@@ -1,7 +1,10 @@
 #!/usr/bin/perl -wT
 use strict;
 
-my $cid = username;
+&ReadParse(%in);
+
+my $cid = $in{username};
+
 print "Set-Cookie: NAME=$cid\n";
 print "Content-type: text/html\n\n";    
 
