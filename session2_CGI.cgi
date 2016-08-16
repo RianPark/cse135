@@ -4,16 +4,21 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-print header(-cookie=>$cookie);
-print start_html("Cookie");
+my $name= param("username");
 
-print <<EndOfHTML;
-<h2></h2>
-Your name is $cookie.value <p>
+if( $name eq ''){
+		print "<p>Howdy stranger, return to page 1 to input a username!</p>";
+}
+else{
 
-<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
-<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
+	print <<EndOfHTML;
+	<h2></h2>
+	<p> Hi $name, nice to meet you </p>
 
-EndOfHTML
+	<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
+	<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
 
-print end_html;
+	EndOfHTML
+
+	print end_html;
+}
