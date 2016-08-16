@@ -3,6 +3,7 @@
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI::Session;
+use CGI;
 use strict;
 
 my $q = CGI->new();
