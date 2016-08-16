@@ -11,7 +11,7 @@ print start_html("Cookie");
 
 print <<EndOfHTML;
 <h2></h2>
-Your name is $cid.<p>
+Your name is $cid.
 
 <button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
 <button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
