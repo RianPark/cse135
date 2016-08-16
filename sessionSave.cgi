@@ -12,8 +12,10 @@ print start_html("Cookie");
 print <<EndOfHTML;
 <h2></h2>
 Your name is $cid.<p>
-redirect("session1_CGI.html");
-
 EndOfHTML
+
+<p><a href="session1_CGI.html"> Back to Session1 CGI </a></p>
+
+<p><a href="session2_CGI.cgi"> Go to Session2 CGI </a></p>
 
 print end_html;
