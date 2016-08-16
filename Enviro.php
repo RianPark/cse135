@@ -4,6 +4,6 @@
 	echo "</head><body>";
 	echo "<h1>Environment Variables : PHP</h1>";
 	echo "<pre>";
-	print_r($_SERVER);
+	print_r($_ENV);
 	echo"</body></html>";
 ?>
