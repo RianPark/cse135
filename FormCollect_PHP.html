@@ -6,15 +6,15 @@
 </head>
 
 <body>
-  <h1>Form Collector CGI</h1>
+  <h1>Form Collector PHP</h1>
 
   <script type="text/javascript">
   
   function sendGetPost(){
   	
-  	var collect = document.getElementById("method").value;
+  	var collector = document.getElementById("method").value;
   	var form = document.getElementById("theform");
-  	if(collect == "post"){
+  	if(collector == "post"){
       form.action="echoPostPHP.php";
   		form.method="post";
   	}
