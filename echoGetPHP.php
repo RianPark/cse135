@@ -2,7 +2,7 @@
 	header('Content-Type: text/html');
 	echo "<html><head><title>Form Echo</title>";
 	$color=$_GET["color"];
-	echo "</head><body bgcolor=$color><h1>";
+	echo "</head><body bgcolor=$get_color><h1>";
 	$first=$_GET["firstname"];
 	$last=$_GET["lastname"];
 	$dtime= date("Y-m-d", time());
