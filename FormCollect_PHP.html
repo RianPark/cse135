@@ -8,13 +8,13 @@
 <body>
   <h1>Form collect PHP</h1>
 
-
   <script type="text/javascript">
   
   function sendGetPost(){
     
-    var selector = document.getElementById("methodSelect").value;
+    var selector = document.getElementById("method_select").value;
     var form = document.getElementById("theform");
+    
     if(selector == "post")
     {
       form.action="echoPostPHP.php";
@@ -31,32 +31,26 @@
   <form action="echoGetPHP.php" id="theform">
     First Name:
     <input type="text" name="firstname"><br>
-    Last Name:
+    Last Name: 
     <input type="text" name="lastname"><br>
-    <p>Favorite Color: </p>
-  <select id="colorSelect" name="cSelect">
-  
-  <option value="red">Red</option>
-  <option value="blue">Blue</option>
-  <option value="white">White</option>
-
+    
+  <p>Favorite Color:
+  <select name="color_select">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="white">White</option>
   </select>
+  </p>
 
-  <p>Request Method: </p>
-  <select id="methodSelect" name="mSelect" onchange="sendGetPost();">
+  <p>Request Method:
+  <select id="method_select" name="Select" onchange="sendGetPost();">
     <option value="get">GET</option>
     <option value="post">POST</option>
   </select>
-    <input type="submit">
+  </p>
 
-  </form>
-
-
+  <input type="submit">
   
-
-
-
+  </form>
 </body>
-
-
 </html>
