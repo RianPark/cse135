@@ -10,5 +10,5 @@ my $cookie = $cgi->cookie(
 );
 
 print $cgi->header( -cookie => $cookie );
-my $cookie_data = $cgi->cookie('User_cookie') || 'No Cookie Set';
+my $cookie_data = $cgi->cookie('value') || 'No Cookie Set';
 print "<h2>Cookie Data: $cookie_data</h2>\n";
