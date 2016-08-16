@@ -2,24 +2,19 @@
 
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use CGI::Session;
 use strict;
 
-my $session = new CGI::Session();
-my $name = $session -> param("username");
+my $cookie = cookie(-name=>'mycookie', -value=>$cid );
+print header(-cookie=>$cookie);
+print start_html("Cookie");
 
-print header;
-print start_html("Session Save CGI");
-print "<body>";
-print "<h1>Session Page 2 - CGI</h1>";
-if($name eq ''){
-	print "<p>Howdy stranger, return to page 1 to input a username!</p>";
-}
-else{
-print "<p> Hi $name, nice to meet you</p>";
-}
-print "<a href='session1_CGI.html'>Return to page 1</a><br>";
+print <<EndOfHTML;
+<h2></h2>
+Your name is $cookie.value <p>
 
-print "<a href='delete_CGI.cgi'>Destroy session!</a>";
-print "</body>";
+<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
+<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
+
+EndOfHTML
+
 print end_html;
