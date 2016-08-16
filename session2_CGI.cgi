@@ -1,28 +1,29 @@
-#!/usr/bin/perl -wT
+#!/usr/bin/perl 
+use CGI qw(:cgi-lib :standard);
+use CGI::Cookie;
 
-use CGI qw(:standard);
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use strict;
+%cookie_check = CGI::Cookie->fetch;
+$cookie_var = $cookie_check{'ID_cookie'};
 
-my $name = $cid;
-my $state = 'aa';
-
-if( $name == ''){
-		$state = 'Howdy stranger, return to page 1 to input a username!';
+if ($cookie_var) 
+{ 
+	$state = "Hi $cookie_var->value nice to meet you";
 }
-else{
-		$state = 'Hi $name, nice to meet you';
+else {
+	$state = "Howdy stranger, tell me your name on session 1!";
 }
 
-print header;
-print start_html("");
-print <<EndOfHTML;
+print "Content-type: text/html\n\n"; 
 
-<h2></h2>
- <p> $state .. </p>
- <p> $name  .. </p>
-
-<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
-<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
-EndOfHTML
-print end_html;
+print << "EOF";
+<html>
+	<head>
+		<title>Session Page 2</title>
+	</HEAD>
+	<body>
+		<H1>$state</H1>
+		<button type="button"><a href="session1_CGI.html">Back to session 1</a></button>
+		<button type="button"><a href="delete_CGI.cgi">Delete</a></button>
+	</body>
+</html>
+EOF

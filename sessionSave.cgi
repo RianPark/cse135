@@ -1,21 +1,11 @@
 #!/usr/bin/perl -wT
 
-use CGI qw(:standard);
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use strict;
+use CGI qw(:cgi-lib :standard);
+use CGI::Cookie;
 
-my $cid = param("username");
-my $cookie = cookie(-name=>'mycookie', -value=>$cid );
-print header(-cookie=>$cookie);
-print start_html("Cookie");
+my $name = param("username");
 
-print <<EndOfHTML;
-<h2></h2>
-Your name is $cid.
+$cookie_name = 'ID_cookie';
+my $ID_var = CGI::Cookie->new(-name=>$cookie_name, -value=>$name, -expires => '1h', -httponly => 1);
 
-<button type="button"><a href="session1_CGI.html"> Back to Session1 CGI </a></button>
-<button type="button"><a href="session2_CGI.cgi"> Go to Session2 CGI </a></button>
-
-EndOfHTML
-
-print end_html;
+print redirect(-url=>'session1_CGI.html', -cookie=>$ID_var);
