@@ -2,15 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
-var num;
-var low = 1;
-var high = 3;
-
-function randomInt ( low, high ) {
-	num = Math.floor(Math.random() * ( high -low ) + low );
-}
-
-app.listen(3303, function() {
+app.listen(8000, function() {
 	console.log("start server");
 })
 
