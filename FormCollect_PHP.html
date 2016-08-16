@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PHP</title>
-</head>
+  <head>
+    <title>PHP</title>
+  </head>
 
-<body>
-  <h1>Form collect PHP</h1>
+  <body>
+    <h1>Form collect PHP</h1>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
   
-  function sendGetPost(){
-    
-    var selector = document.getElementById("method_select").value;
-    var form = document.getElementById("theform");
-    
-    if(selector == "post")
+    function sendGetPost()
     {
-      form.action="echoPostPHP.php";
-      form.method="post";
-    }
-    else
-    {
-      form.action="echoGetPHP.php";
-      form.method="get";
-    }
-  }
-  </script>
-
-  <form action="echoGetPHP.php" id="theform">
-    First Name:
-    <input type="text" name="firstname"><br>
-    Last Name:  
-    <input type="text" name="lastname"><br>
+      var selector = document.getElementById("method_select").value;
+      var form = document.getElementById("theform");
     
-  <p>Favorite Color:
-  <select name="color_select">
-    <option value="red">Red</option>
-    <option value="blue">Blue</option>
-    <option value="white">White</option>
-  </select>
-  </p>
+      if(selector == "post")
+      {
+        form.action="echoPostPHP.php";
+        form.method="post";
+      }
+      else
+      {
+        form.action="echoGetPHP.php";
+        form.method="get";
+      }
+    }
+    
+    </script>
 
-  <p>Request Method:
-  <select id="method_select" name="Select" onchange="sendGetPost();">
-    <option value="get">GET</option>
-    <option value="post">POST</option>
-  </select>
-  </p>
+    <form action="echoGetPHP.php" id="theform">
+      
+      First Name:
+      <input type="text" name="firstname"><br>
+      Last Name:  
+      <input type="text" name="lastname"><br>
+    
+      <p>Favorite Color:
+        <select name="color_select">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="white">White</option>
+        </select>
+      </p>
 
-  <input type="submit">
+      <p>Request Method:
+        <select id="method_select" name="Select" onchange="sendGetPost();">
+          <option value="get">GET</option>
+          <option value="post">POST</option>
+        </select>
+      </p>
+
+      <input type="submit">
+    
+    </form>
   
-  </form>
-</body>
+  </body>
 </html>
