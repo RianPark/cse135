@@ -2,12 +2,9 @@
 
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use CGI::Session;
-use CGI;
 use strict;
 
-my $session = new CGI::Session();
-my $name = $session -> param("username");
+my $name = param("username");
 my $state = 'aa';
 
 if( $name == ''){
@@ -18,7 +15,7 @@ else{
 }
 
 print header;
-print start_html("Cookie");
+print start_html("");
 print <<EndOfHTML;
 
 <h2></h2>

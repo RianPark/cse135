@@ -2,12 +2,7 @@
 
 use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use CGI::Session;
-use CGI;
 use strict;
-
-my $q = CGI->new();
-my $session = CGI::Session->new($q);
 
 my $cid = param("username");
 my $cookie = cookie(-name=>'mycookie', -value=>$cid );
