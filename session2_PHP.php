@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
     	<title>Session2</title>
@@ -20,5 +20,6 @@
  		?>
   		<button type="button"><a href="delete_PHP.php" >Delete</a></button>
   		<button type="button"><a href="session1_PHP.html">Return to session 1</a></button>
+  		
 	</body>
 </html>

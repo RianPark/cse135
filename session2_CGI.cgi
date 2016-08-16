@@ -12,7 +12,7 @@ if ($cookie_var)
 }
 else 
 {
-	$state = "Howdy stranger, tell me your name on session 1!";
+	$state = "Howdly stranger, tell me your name on session 1!";
 }
 
 print "Content-type: text/html\n\n"; 
@@ -20,7 +20,7 @@ print "Content-type: text/html\n\n";
 print << "EOF";
 <html>
 	<head>
-		<title>Session Page 2</title>
+		<title>Session 2</title>
 	</HEAD>
 	<body>
 		<H1>$state</H1>
