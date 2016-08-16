@@ -4,7 +4,8 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-my $name= $cookie.value;
+my $session = new CGI::Session();
+my $name = $session -> param("username");
 my $state = 'aa';
 
 if( $name == ''){
@@ -14,7 +15,7 @@ else{
 		$state = 'Hi $name, nice to meet you';
 }
 
-print header(-cookie=>$cookie);
+print header;
 print start_html("Cookie");
 print <<EndOfHTML;
 
