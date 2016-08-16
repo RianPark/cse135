@@ -10,7 +10,8 @@ if ($cookie_var)
 	$name = $cookie_var->value;
 	$state = "Hi $name nice to meet you";
 }
-else {
+else 
+{
 	$state = "Howdy stranger, tell me your name on session 1!";
 }
 
