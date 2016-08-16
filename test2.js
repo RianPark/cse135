@@ -1,9 +1,9 @@
 var http = require("http");
+var fs = require('fs');
 
 http.createServer(function (request, response) {
 
 	fs.readFile('/blueJS.html', (err, data) => {
-		if( err ) throw err;
 		console.log(data);
 	});
 
