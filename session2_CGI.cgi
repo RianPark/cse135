@@ -4,8 +4,7 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 
-my $name= param("username");
-my $cookie = cookie(-name=>'mycookie', -value=>$name );
+my $name= $cookie.value;
 my $state = 'aa';
 
 if( $name == ''){
