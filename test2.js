@@ -3,11 +3,10 @@ var fs = require('fs');
 
 http.createServer(function (request, response) {
 
-	fs.readFile('blueJS.html', function(err, data)  {
-		console.log(data);
-		response.writeHead(200, {'Content-Type': 'text/plain'});
-  		response.end(data);
-	});
+	<div style="background:yellow" ani_type="color(background:'red')"></div>
+<br />
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+    response.end('Hello World\n');
 }).listen(8000);
 
 // Console will print the message
