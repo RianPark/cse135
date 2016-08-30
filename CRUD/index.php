@@ -22,6 +22,7 @@
     define('DB_NAME','first');
 
 	// CONNECT TO DB
+	$rec_limit = 5;
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     
     if (!$conn) {
