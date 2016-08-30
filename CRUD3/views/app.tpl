@@ -53,7 +53,18 @@
 <button type="button" id="addBtn" class="btn btn-primary btn-lg">
   Add
 </button>
-
+<!--- Pagination elements -->
+<form>
+	<label>Items per page:</label>
+	<select>
+		<option>5</option>
+		<option>10</option>
+		<option>20</option>
+		<option value="100">All</option>
+	</select>
+</form>
+<br>
+<button type="button" id="addBtn" class="btn btn-primary btn-med"> Add </button>
 
 <!--  Partials are below --->
 
@@ -141,7 +152,23 @@
 		$("#addBtn").click(function () {
 		   SBC.editRecord();	
 		})
-		
+//////////////////////////////////////		
+		/* sort table */
+		$("#table").tablesorter({widthFixed: true, widgets: ['zebra']});
+		/* initiate pagination plugin */
+		$("div.holder").jPages({
+			containerID : "itemContainer",
+			perPage     :  5
+		});
+		/* on select change, get new items per page */
+		$("select").change(function(){
+			var newPerPage = parseInt($(this).val());
+			$("div.holder").jPages("destroy").jPages({
+				containerID : "itemContainer",
+				perPage     :  newPerPage
+			});
+		});
+
 	});
 	
 	
