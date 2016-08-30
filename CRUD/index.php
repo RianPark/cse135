@@ -16,10 +16,10 @@
 <?php
 
 	// PLEASE CHANGE THESE LINES!!!!!!
-    define('DB_USER','demo1');
-    define('DB_PASSWORD','demo1');
-    define('DB_HOST','http://138.68.30.229/');
-    define('DB_NAME','demo1');
+    define('DB_USER','root');
+    define('DB_PASSWORD','Jh272618');
+    define('DB_HOST','localhost');
+    define('DB_NAME','first');
 
 	// CONNECT TO DB
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
